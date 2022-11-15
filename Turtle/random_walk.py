@@ -1,8 +1,8 @@
+import turtle as t
 from turtle import Turtle, Screen
 import random
 
-colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
-
+t.colormode(255)
 timmy=Turtle()
 screen=Screen()
 
@@ -21,10 +21,15 @@ movements=[move_left, move_right, move_straight]
 
 timmy.speed(0)
 
+def change_color():
+    r=random.randint(0,255)
+    g=random.randint(0,255)
+    b=random.randint(0,255)
+    return (r,g,b)
 
 for _ in range(0,100):
     timmy.pensize(10)
-    timmy.color(random.choice(colours))
+    timmy.color(change_color())
     move=random.choice(movements)
     move()
 
